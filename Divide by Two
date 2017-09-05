@@ -1,0 +1,30 @@
+#include "stdafx.h"
+#include <iostream>
+#include <limits>
+
+double Divide()
+{
+	std::cout << "Enter a number to be halved: " << "\n";
+	double x;
+	std::cin >> x;
+	return x;
+}
+
+void printResults(double x)
+{
+	int a = x;
+	int b = 2;
+	std::cout << static_cast<double>(a) / b << "\n";
+	return 0;
+}
+
+int main()
+{
+	double x = Divide();
+	printResults(x);
+	std::cout << "Press ENTER to continue..." << std::flush;
+	std::cin.get();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    return 0;
+}
+
