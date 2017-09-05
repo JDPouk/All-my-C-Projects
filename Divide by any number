@@ -1,0 +1,39 @@
+#include "stdafx.h"
+#include <iostream>
+#include <limits>
+
+long double Divide()
+{
+	std::cout << "Enter a number to be divided: " << "\n";
+	long double x;
+	std::cin >> x;
+	return x;
+}
+
+long double Second()
+{
+	std::cout << "Enter a number to divide: " << "\n";
+	long double y;
+	std::cin >> y;
+	return y;
+}
+
+void printResults(long double x, long double y)
+{
+	int a = x;
+	int b = y;
+	std::cout << "Your result is: " << static_cast<double>(a) / b << "\n";
+	return ;
+}
+
+int main()
+{
+	long double x = Divide();
+	long double y = Second();
+	printResults(x,y);
+	std::cout << "Press ENTER to continue..." << std::flush;
+	std::cin.get();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    return 0;
+}
+
