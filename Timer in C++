@@ -1,0 +1,32 @@
+#include "stdafx.h"
+#include <iostream>
+#include <chrono>
+#include <ctime>
+
+int main()
+{
+	using namespace std;
+	using namespace std::chrono;
+
+	int a;	
+	cout << "Enter 1 to start: " << '\n';
+		cin >> a;
+		if ( a >0 );
+		{
+			auto start = std::chrono::system_clock::now();
+
+			int b;
+			cout << "Enter 1 to stop: " << '\n';
+			cin >> b;
+			if (b > 0)
+			{
+				auto end = std::chrono::system_clock::now();
+				std::chrono::duration<double> elapsed_seconds = end - start;
+				std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+				cout << "elapsed time: " << elapsed_seconds.count() << '\n';
+				std::cin.get();
+				std::cin.ignore();
+				return 0;
+			}
+		}
+}
